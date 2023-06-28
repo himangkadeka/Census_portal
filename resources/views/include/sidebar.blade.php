@@ -94,24 +94,7 @@
             </ul>
         </li><!-- End Forms Nav -->
         <!--start menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed mt-3" data-bs-target="#forms-menu" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-card-list"></i><span>Menu</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="forms-menu" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="forms-elements.html">
-                        <i class="bi bi-circle"></i><span>Add Menu</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-layouts.html">
-                        <i class="bi bi-circle"></i><span>View Menu</span>
-                    </a>
-                </li>
 
-            </ul>
-        </li><!-- End menu -->
 
         <li class="nav-item">
             <a class="nav-link collapsed mt-3" data-bs-target="#tables-directory" data-bs-toggle="collapse" href="#">

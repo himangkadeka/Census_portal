@@ -53,6 +53,23 @@ class MenuController extends Controller
         return view('menu/edit-main-menu',$data);
 
     }
+    public function updateMainMenu(Request $request )
+    {
+        Mainmenu::where ('id',$request->id)
+        ->update([
+            'menuhead'=>$request->menuhead,
+            'priority'=>$request->priority,
+            'isactive'=>$request->isactive,
+            ]);
+//        return redirect()->route('route.name', [$param]);
+        return redirect()->route('viewmainmenu')->with('success','Main-Menu updated Successfully');
+
+    }
+    public function destroy($id){
+        Mainmenu::where('id',$id)->delete();
+        return redirect()->route('viewmainmenu')->with('success','Main-Menu deleted Successfully');
+
+    }
 
     /** Sub-menu methods */
     public function submenu(){

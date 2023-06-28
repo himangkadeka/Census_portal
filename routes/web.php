@@ -25,6 +25,11 @@ Route::get('admin-panel/menu/viewmainmenu',[MenuController::class,'show'])->name
 //edit main-menu by getting data from id
 Route::get('admin-panel/menu/edit-menu/{id}',[MenuController::class,'editMainMenu'])->name('edit-main-menu');
 
+//update main-menu
+Route::post('menu/update-main-menu',[MenuController::class,'updateMainMenu']);
+
+//delete main menu
+Route::get('admin-panel/menu/delete-main-menu/{id}',[MenuController::class,'destroy'])->name('delete-main-menu');
 
 //add sub-menu
 Route::get('admin-panel/menu/submenu',[MenuController::class,'submenu'])->name('submenu');

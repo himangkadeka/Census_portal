@@ -20,8 +20,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><span>Update Main Menu</span></h5>
-                            <form action="{{url('menu/save-mainmenu')}}" method="post">
+                            <form action="{{url('menu/update-main-menu')}}" method="post">
+
                                 @csrf
+                                <input type="hidden" name="id" value="{{$editmainmenu->id}}">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Menu Head</label>
                                     <input type="text" class="form-control" id="menuhead" name="menuhead" value="{{$editmainmenu->menuhead}}">
@@ -31,21 +33,22 @@
                                     <input type="text" class="form-control" id="priority" name="priority" value="{{$editmainmenu->priority}}">
                                 </div>
                                 <div class="mb-3">
-{{--                                    <label for="name" class="form-label">Is Active</label>--}}
-{{--                                    <select class="form-select" name="isactive" aria-label="Default select example">--}}
+                                    <label for="name" class="form-label">Is Active</label>
+                                    <select class="form-select" name="isactive" aria-label="Default select example">
 {{--                                        <option value="">Select</option>--}}
 
-{{--                                        <option value="{{$editmainmenu->isactive == 1 ? 'Yes' : 'No'}}">{{}}</option>--}}
-{{--                                        <option value="{{$editmainmenu->isactive == 0 ? 'No' : 'Yes'}}"></option>--}}
+{{--                                        <option value="{{$editmainmenu->isactive == 1 ? 'Yes' : 'No'}}">{{$editmainmenu->isactive == 1 ? 'Yes' : 'No'}}</option>--}}
+{{--                                        <option value="{{$editmainmenu->isactive == 0 ? 'No' : 'Yes'}}">{{$editmainmenu->isactive == 0 ? 'No' : 'Yes'}}</option>--}}
+                                        <option value="{{$editmainmenu->isactive}}" selected>{{$editmainmenu->isactive == 1 ? 'Yes' : 'No'}}</option>
+                                        @if($editmainmenu->isactive==0)
+                                        <option value="1">Yes</option>
+                                        @else
+                                        <option value="0">No</option>
+                                        @endif
 
-
-{{--                                    </select>--}}
+                                    </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Is Active</label>
 
-                                    <input type="text" class="form-control" id="isactive" name="isactive" value="{{ $editmainmenu->isactive == 1 ? 'Yes' : 'No' }}">
-                                </div>
 
                                 <button class="btn btn-outline-danger mt-3" type="submit">Update Menu</button>
                             </form>

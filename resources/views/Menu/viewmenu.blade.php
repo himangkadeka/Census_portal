@@ -44,7 +44,7 @@
 
                                         <td>
                                             <a href="{{route('edit-main-menu',['id'=>$menu->id])}}" class="btn btn-info btn-sm "><i class="bi bi-pencil-square"></i></a>
-                                            <a href="{{url('/delete',$menu->id)}}" class="btn btn-danger btn-sm "><i class="bi bi-recycle"></i></a>
+                                            <a href="{{route('delete-main-menu',['id'=>$menu->id])}}" class="btn btn-danger btn-sm "><i class="bi bi-recycle"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -56,6 +56,18 @@
                 </div>
 
             </div>
+
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+            <script>
+                @if(session()->has('success'))
+                $(document).ready(function(){
+                    alert('{{session()->get('success')}}');
+                });
+
+                @endif
+
+            </script>
+
         </section>
     </x-slot>
 
