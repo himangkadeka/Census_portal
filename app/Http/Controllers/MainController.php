@@ -9,6 +9,9 @@ class MainController extends Controller
     /**
      * Display a listing of the resource.
      */
+//    public function test(){
+//        return json_encode(['himangka'=>'deka']);
+//    }
     public function index()
     {
         return view('dashboard');

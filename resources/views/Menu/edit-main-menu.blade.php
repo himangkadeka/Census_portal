@@ -51,6 +51,7 @@
 
 
                                 <button class="btn btn-outline-danger mt-3" type="submit">Update Menu</button>
+                                <a href="{{route('viewmainmenu')}}" class="btn btn-outline-success mt-3">Go Back</a>
                             </form>
                             <div class="mt-3">
                                 @if(session()->has('success'))

@@ -14,7 +14,7 @@
             </a>
             <ul id="icons-user" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="icons-bootstrap.html">
+                    <a href="{{url('admin-panel/user/add-user')}}">
                         <i class="bi bi-circle"></i><span>Add User</span>
                     </a>
                 </li>

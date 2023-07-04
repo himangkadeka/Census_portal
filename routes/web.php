@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Page\PageController;
 use App\Http\Controllers\Menu\MenuController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Str;
 
 //Route for Home page
@@ -40,7 +41,8 @@ Route::post('menu/save-submenu',[MenuController::class,'storeSubmenu']);
 //view sub menu
 Route::get('admin-panel/menu/viewsubmenu',[MenuController::class,'showSubMenu'])->name('viewsubmenu');
 
-
+//add user
+Route::get('admin-panel/user/add-user',[UserController::class,'index'])->name('add-new-user');
 
 //Route for Dashboard
 Route::get('/dashboard', function ()
@@ -53,6 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::get('test',function (){
     return Str::slug('Himangka deka');
 });
