@@ -63,9 +63,7 @@
                 $(document).ready(function(){
                     alert('{{session()->get('success')}}');
                 });
-
                 @endif
-
             </script>
 
         </section>

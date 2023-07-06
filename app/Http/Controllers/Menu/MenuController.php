@@ -29,10 +29,7 @@ class MenuController extends Controller
 
     public function store(Request $request)
     {
-//        $request->validate([
-//            'menuhead' => ['required', 'string'],
-//            'priority' => ['required', 'integer'],
-//        ]);
+
         Mainmenu::create([
             'menuhead' => $request->menuhead,
             'priority' => $request->priority,

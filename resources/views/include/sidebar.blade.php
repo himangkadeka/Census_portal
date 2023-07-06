@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="icons-remix.html">
+                    <a href="{{url('admin-panel/user/view-user')}}">
                         <i class="bi bi-circle"></i><span>View User</span>
                     </a>
                 </li>

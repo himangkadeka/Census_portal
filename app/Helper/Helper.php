@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 /******* Get Main Menu Name *********/
 function getMainMenuName($main_menu_id)
 {
@@ -9,5 +11,10 @@ function getMainMenuName($main_menu_id)
         ->first();
     return $menu_name->menuhead;
 }
+//to get the roles assigned
+function getRoleName($id){
+    $roles = User::find($id)->roles->toArray();
 
+    return $roles[0]['display_name'];
+}
 ?>

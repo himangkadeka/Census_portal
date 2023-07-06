@@ -53,13 +53,13 @@
                                 <button class="btn btn-outline-danger mt-3" type="submit">Update Menu</button>
                                 <a href="{{route('viewmainmenu')}}" class="btn btn-outline-success mt-3">Go Back</a>
                             </form>
-                            <div class="mt-3">
-                                @if(session()->has('success'))
-                                    <div class="alert alert-success">
-                                        {{session('success')}}
-                                    </div>
-                                @endif
-                            </div>
+                            @if(session()->has('success'))
+                                <div class="alert alert-success alert-dismissible fade show">
+                                    <i class="bi bi-check-circle me-1"></i>
+                                    {{session('success')}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
 
 
                         </div>

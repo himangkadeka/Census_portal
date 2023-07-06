@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Page\PageController;
@@ -41,8 +43,11 @@ Route::post('menu/save-submenu',[MenuController::class,'storeSubmenu']);
 //view sub menu
 Route::get('admin-panel/menu/viewsubmenu',[MenuController::class,'showSubMenu'])->name('viewsubmenu');
 
-//add user
+//Register user
 Route::get('admin-panel/user/add-user',[UserController::class,'index'])->name('add-new-user');
+
+//view user
+Route::get('admin-panel/user/view-user',[UserController::class,'userShow'])->name('view-user');
 
 //Route for Dashboard
 Route::get('/dashboard', function ()
@@ -55,8 +60,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('test',function (){
-    return Str::slug('Himangka deka');
-});
+//Tips : to create demo hash password
+//Route::get('test',function (){
+//    return Hash::make('password');
+    //dd(User::find(1)->roles->toArray());
+//});
 require __DIR__.'/auth.php';

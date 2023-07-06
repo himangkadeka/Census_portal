@@ -20,6 +20,7 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
     <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/quill/quill.snow.css')}}" rel="stylesheet">
@@ -29,7 +30,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/adduser.css')}}">
+
     <title>{{$title}}</title>
 </head>
 <body>
