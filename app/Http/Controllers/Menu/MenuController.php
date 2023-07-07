@@ -84,7 +84,7 @@ class MenuController extends Controller
             'priority'=>$request->priority,
             'isactive'=>1,
         ]);
-        return redirect()->route('submenu')->with('success','Sub-Menu Added Succesfully');
+        return redirect()->route('submenu')->with('success','Sub-Menu Added Successfully');
     }
     public function showSubMenu(){
        $viewsubmenu = submenu::all();

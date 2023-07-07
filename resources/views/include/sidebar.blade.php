@@ -2,7 +2,7 @@
     <ul class="sidebar-nav mt-5" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="{{url('/')}}">
+            <a class="nav-link " href="{{url('/admin-panel/dashboard')}}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
