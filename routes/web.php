@@ -10,8 +10,11 @@ use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Str;
 
+Route::middleware('auth')->group(function () {
 //Route for Home page
 Route::get('/admin-panel/dashboard',[MainController::class,'index'])->name('index');
+
+});
 
 //adding new page data
 Route::get('admin-panel/page/addpage',[PageController::class,'addPage'])->name('addpage');
