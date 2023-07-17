@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Mainmenu;
 use App\Models\submenu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use function Symfony\Component\Mime\Header\all;
 
 class MenuController extends Controller
@@ -30,12 +31,17 @@ class MenuController extends Controller
     public function store(Request $request)
     {
 
-        Mainmenu::create([
+       Mainmenu::create([
             'menuhead' => $request->menuhead,
             'priority' => $request->priority,
             'isactive' => 1,
         ]);
-//dd('hello');
+//        $data = DB::table('mainmenus')->insert(array(
+//            'menuhead'=> 'Test',
+//            'priority'=>'11',
+//            'isactive'=>'1',
+//        ));
+//dd($data);
         return redirect()->route('mainmenu')->with('success', 'Main-Menu added Successfully');
     }
     public function  show()

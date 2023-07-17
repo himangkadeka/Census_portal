@@ -60,7 +60,7 @@
             </a>
             <ul id="components-page" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{{url('admin-panel/page/addpage')}}"  style="{{ request()->is('page/addpage') ?  'color: #F9A82D;' : '' }}">
+                    <a href="{{url('admin-panel/Page/add-page')}}"  style="{{ request()->is('page/addpage') ?  'color: #F9A82D;' : '' }}">
                         <i class="bi bi-circle"></i><span>Add Page</span>
                     </a>
                 </li>

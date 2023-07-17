@@ -8,6 +8,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\Page\PageController;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Str;
 
 Route::middleware('auth')->group(function () {
@@ -16,8 +17,11 @@ Route::get('/admin-panel/dashboard',[MainController::class,'index'])->name('inde
 
 });
 
-//adding new page data
-Route::get('admin-panel/page/addpage',[PageController::class,'addPage'])->name('addpage');
+//add page view
+Route::get('admin-panel/page/add-page',[PageController::class, 'index'])->name('add-page');
+
+//save page to database
+Route::get('admin-panel/save-page',[PageController::class, 'savePage'])->name('save-page');
 
 //adding main menu data/getting data from form
 Route::get('admin-panel/menu/mainmenu',[MenuController::class,'mainmenu'])->name('mainmenu');
@@ -52,6 +56,10 @@ Route::get('admin-panel/user/add-user',[UserController::class,'index'])->name('a
 //view user
 Route::get('admin-panel/user/view-user',[UserController::class,'userShow'])->name('view-user');
 
+//edit user
+Route::get('admin-panel/user/edit-user',[UserController::class,''])->name('edit-user');
+
+
 //Route for Dashboard
 Route::get('/dashboard', function ()
 {
@@ -68,4 +76,10 @@ Route::middleware('auth')->group(function () {
 //    return Hash::make('password');
     //dd(User::find(1)->roles->toArray());
 //});
+//Route::get('test',[TestController::class,'test']);
+
+Route::get('/log',function (){
+    \Log::info('Testing Log');
+    dd("done");
+});
 require __DIR__.'/auth.php';
