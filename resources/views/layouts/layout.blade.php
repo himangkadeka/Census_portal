@@ -27,6 +27,7 @@
     <link href="{{asset('vendor/quill/quill.bubble.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/simple-datatables/style.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/fontawesome-free/all.min.css')}}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">

@@ -81,7 +81,12 @@
             </a>
             <ul id="forms-gallery" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="{{url('admin-panel/Gallery/view-category')}}">
+                        <i class="bi bi-circle"></i><span>Category</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('admin-panel/Gallery/add-images')}}">
                         <i class="bi bi-circle"></i><span>Add Image</span>
                     </a>
                 </li>

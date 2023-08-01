@@ -34,7 +34,7 @@
                         </div>
                         <div class="mb-2">
                             <label for="name" class="form-label">Sub Menu</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" id="submenu" aria-label="Default select example">
                                 <option selected>Select Sub-Menu</option>
                                 @foreach($submenu as $smenu)
                                     <option value="{{$smenu->id}}">{{$smenu->submenuhead}}</option>

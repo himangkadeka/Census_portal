@@ -74,7 +74,7 @@ class MenuController extends Controller
 
     }
 
-    /** Sub-menu methods */
+    /********* Sub-menu methods **********/
     public function submenu(){
         /** Showing data in dropdown */
         $data['mainmenu'] = Mainmenu::all();

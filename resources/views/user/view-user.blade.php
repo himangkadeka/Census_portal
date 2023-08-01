@@ -28,12 +28,13 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Contact</th>
                                     <th scope="col">Role</th>
-                                    <th scope="col">Active</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
 
 
                                 </tr>
                                 </thead>
+
                                     @foreach($view_user as $key=>$user)
                                     <tr>
                                         <td>{{++$key}}</td>
@@ -42,9 +43,9 @@
                                         <td>{{$user->contact}}</td>
                                         <td>{{$user->role_name}}</td>
                                         <td>@if($user->isactive== 1)
-                                                <a href="#" class="btn btn-md btn-success">Yes</a>
+                                                <span class="badge bg-success">Yes</span>
                                                 @else
-                                                <a href="#" class="btn btn-md btn-danger">No</a>
+                                                <span class="badge bg-danger">No</span>
                                         </td>
                                             @endif
 
@@ -54,7 +55,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                                    </tbody>
+
                             </table>
 
                         </div>

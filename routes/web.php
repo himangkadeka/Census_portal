@@ -8,19 +8,20 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\Page\PageController;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Str;
 
 Route::middleware('auth')->group(function () {
-//Route for Home page
+/******Route for Home page********/
 Route::get('/admin-panel/dashboard',[MainController::class,'index'])->name('index');
 
 });
 
-//add page view
+/**********add page view*************/
 Route::get('admin-panel/page/add-page',[PageController::class, 'index'])->name('add-page');
 
-//save page to database
+/***********save page to database***********/
 Route::get('admin-panel/save-page',[PageController::class, 'savePage'])->name('save-page');
 
 //adding main menu data/getting data from form
@@ -59,6 +60,15 @@ Route::get('admin-panel/user/view-user',[UserController::class,'userShow'])->nam
 //edit user
 Route::get('admin-panel/user/edit-user',[UserController::class,''])->name('edit-user');
 
+
+/******* add image ********/
+Route::get('admin-panel/Gallery/add-images',[GalleryController::class,'index'])->name('add-images');
+
+/******* view category *******/
+Route::get('admin-panel/Gallery/view-category',[GalleryController::class,'category'])->name('view-category');
+
+/******* add category *******/
+Route::post('category/save-category',[GalleryController::class,'createCategory'])->name('save-category');
 
 //Route for Dashboard
 Route::get('/dashboard', function ()

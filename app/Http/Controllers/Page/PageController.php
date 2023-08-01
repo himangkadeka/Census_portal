@@ -12,7 +12,7 @@ class PageController extends Controller
     public function index()
     {
         $data['mainmenu'] = $this->getMenu();
-        $data['submenu'] = $this->submenu();
+//        $data['submenu'] = $this->submenu();
 //        $data['mainmenu'] = Mainmenu::all();
         return view('Page.addpage',$data);
 //        return view('Page.addpage');
@@ -25,7 +25,7 @@ class PageController extends Controller
     }
 
     //get submenu data
-    public function submenu()
+    public function submenu( Request $request)
     {
        return submenu::all();
 //        return view('Page/addpage');
