@@ -11,7 +11,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Str;
-
+use App\Http\Controllers\DirectoryController;
 Route::middleware('auth')->group(function () {
 /******Route for Home page********/
 Route::get('/admin-panel/dashboard',[MainController::class,'index'])->name('index');
@@ -62,13 +62,18 @@ Route::get('admin-panel/user/edit-user',[UserController::class,''])->name('edit-
 
 
 /******* add image ********/
-Route::get('admin-panel/Gallery/add-images',[GalleryController::class,'index'])->name('add-images');
+Route::get('admin-panel/gallery/add-images',[GalleryController::class,'index'])->name('add-images');
+/******* upload image********/
+Route::post('admin-panel/gallery/add-images1', [GalleryController::class, 'saveImage'])->name('image');
 
 /******* view category *******/
-Route::get('admin-panel/Gallery/view-category',[GalleryController::class,'category'])->name('view-category');
+Route::get('admin-panel/gallery/view-category',[GalleryController::class,'category'])->name('view-category');
 
 /******* add category *******/
-Route::post('category/save-category',[GalleryController::class,'createCategory'])->name('save-category');
+Route::post('admin-panel/category/save-category',[GalleryController::class,'createCategory'])->name('save-category');
+
+
+Route::get('admin-panel/directory/create-directory',[DirectoryController::class,'index'])->name('create-category');
 
 //Route for Dashboard
 Route::get('/dashboard', function ()

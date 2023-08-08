@@ -6,12 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\GalleryModel;
 use App\Models\CategoryModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class GalleryController extends Controller
 {
+    /******** show data in add image ********/
+    /****** Pass the data in index page $result category *******/
     public function index()
     {
-        return view('Gallery/add-images');
+        $result['category'] = CategoryModel::all();
+        return view('Gallery/add-images',$result);
+
     }
     public function category(Request $request)
     {
@@ -42,12 +48,21 @@ class GalleryController extends Controller
 
     public function saveImage(Request $request)
     {
-        $validateData = $request->validate([
+        $request->validate([
             'title' => 'required|',
             'category_id' => 'required',
-            'status' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+//            'status' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:10',
         ]);
+
+        $uuid = (string) Str::orderedUuid();
+        $file_name = $uuid .'.'.$request->image->extension();
+
+        $image_path = 'uploads/gallery/'.$request->category_id.'/'.$file_name;
+
+        Storage::disk('public_path')->put('uploads/gallery/'.$request->category_id.'/'.$file_name,file_get_contents($request->image));
+
+//        dd($image_path);
 
     }
 }

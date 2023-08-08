@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class GalleryModel extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','path'];
+    protected $fillable = ['title','path','status','priority','category_id'];
 }

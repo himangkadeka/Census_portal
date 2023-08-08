@@ -230,5 +230,6 @@
 
         </ul>
     </nav><!-- End Icons Navigation -->
+    <script src="{{asset('js/jquery.min.js')}}"></script>
 
 
